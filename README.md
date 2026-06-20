@@ -25,8 +25,7 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 | 项目 | 用途 | 链接 |
 |------|------|------|
 | fail2ban | 日志监控 + 自动封禁异常 IP，防 SSH/Web 暴力破解 | [GitHub](https://github.com/fail2ban/fail2ban) |
-| Docker | 容器化部署，一键运行应用，环境隔离 | [官网](https://www.docker.com) / [文档](https://docs.docker.com) |
-| Docker Compose | 多容器编排，一条命令启动整套服务 | [GitHub](https://github.com/docker/compose) |
+| 666shen/tcp-dashboard | VPS TCP 深度调优面板，一键优化网络参数 | [GitHub](https://github.com/666shen/tcp-dashboard) |
 | BBR | TCP 拥塞控制算法，提升网络速度（内核自带） | 内核内置 |
 
 **fail2ban 常用命令**
@@ -42,28 +41,6 @@ fail2ban-client status sshd
 # 手动解封 IP
 fail2ban-client set sshd unbanip <IP>
 ```
-
-**Docker 常用命令**
-```bash
-# 一键安装
-curl -fsSL https://get.docker.com | bash
-
-# 运行容器
-docker run -d -p 80:80 --name web nginx
-
-# 查看运行中的容器
-docker ps
-```
-
-
-## 📦 自建服务（Docker 部署）
-
-| 项目 | 用途 | 部署命令 |
-|------|------|---------|
-| Bitwarden/Vaultwarden | 自建密码管理 | `docker run -d -p 80:80 vaultwarden/server` |
-| Nextcloud | 私有网盘 | `docker run -d -p 80:80 nextcloud` |
-| Nginx | Web 服务器 / 反向代理 | `docker run -d -p 80:80 nginx` |
-| MySQL | 数据库 | `docker run -d -e MYSQL_ROOT_PASSWORD=123 mysql:8` |
 
 
 ## 🛠️ 开发工具
